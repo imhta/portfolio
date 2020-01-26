@@ -36,8 +36,7 @@ module.exports = {
         fieldName: "gcms",
         // Your API endpoint, available from the dashboard and settings window.
         // You can use this endpoint that features US mountains for now.
-        url:
-          "https://api-euwest.graphcms.com/v1/ck5264v3wnzr101do8ngeahgj/master",
+        url:"https://api-euwest.graphcms.com/v1/ck5264v3wnzr101do8ngeahgj/master",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
