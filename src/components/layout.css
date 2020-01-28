@@ -1,3 +1,44 @@
-body{
+body {
   margin: 0;
+  font-family: "Roboto", monospace;
+  letter-spacing: 0.2rem;
+  background-color: #f1f2f6;
+  color: #464646;
+}
+.app {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+}
+header {
+  padding: 25px 20px;
+  height: 60vh;
+}
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+main nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+main nav a {
+  padding: 25px 50px;
+  margin: 2rem;
+  border-radius: 10px;
+  color: #464646;
+  text-decoration: none;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1),
+    -1rem 1rem 2rem rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+main nav a:hover {
+  box-shadow: inset 1rem 1rem 2rem rgb(0, 0, 0, 0.1),
+    inset -1rem 1rem 2rem rgb(255, 255, 255, 0.5);
+}
+footer {
+  padding: 25px 20px;
+}
+footer > a {
+  text-decoration: none;
 }
