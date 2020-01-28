@@ -53,18 +53,19 @@ footer button {
   padding: 10px;
   margin-right: 10px;
   background-color: transparent;
-  border: none;
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
   color: #464646;
   cursor: pointer;
-  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1),
+  box-shadow: 1rem 1rem 2rem 0 rgba(0, 0, 0, 0.1),
   -1rem 1rem 2rem rgba(255, 255, 255, 0.5);
 }
 
 footer button.active {
-  box-shadow: inset 1rem 1rem 2rem rgb(0, 0, 0, 0.1),
+  box-shadow: inset 1rem 1rem 2rem 0 rgb(0, 0, 0, 0.1),
     inset -1rem 1rem 2rem rgb(255, 255, 255, 0.5);
 }
+
 footer > a {
   text-decoration: none;
 }

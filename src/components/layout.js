@@ -16,9 +16,17 @@ const Layout = ({ children }) => {
       {children}
       <footer>
         <div className="theme-toggle">
-          <button className="light active">Light</button>
-          <button className="dark">Dark</button>
-        </div>        
+          <button className="light active">
+            <span role="img" aria-label="light mode">
+              ☀️
+            </span>
+          </button>
+          <button className="dark">
+            <span role="img" aria-label="dark mode">
+              🌙
+            </span>
+          </button>
+        </div>
         © {new Date().getFullYear()},{` `}
         <a href="https://ponmuthuselvam.xyz">ponmuthuselvam.xyz</a>
       </footer>
