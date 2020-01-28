@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useSiteConfigs = () => {
+export const useSiteGCMS = (type) => {
   const { gcms } = useStaticQuery(graphql`
     query {
       gcms {
@@ -8,8 +8,23 @@ export const useSiteConfigs = () => {
           type
           value
         }
+        projects {
+          title
+          subtitle
+          sourceLink
+          previewLink
+          projectStatus
+          description {
+            html
+            text
+          }
+          coverPicture {
+            id
+            url(transformation: {image: {resize: {width: 700, fit: max}}})
+          }
+        }
       }
     }
   `)
-  return gcms.configs
+  return gcms[type]
 }

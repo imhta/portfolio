@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import configUtils from "../utils/configUtils"
-import { useSiteConfigs } from "../hooks/use-site-gcms"
+import { useSiteGCMS } from "../hooks/use-site-gcms"
 const BlogsPage = () => {
-  const configs = useSiteConfigs()
+  const configs = useSiteGCMS('configs')
   return (
     <Layout>
       <SEO title="Blogs" />
