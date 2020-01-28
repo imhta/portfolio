@@ -28,6 +28,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto Mono`,
+            variants: [`400`, `700`, `900`]
+          },
+          {
+            family:  `Bangers`
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`]
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-graphql",
       options: {
         // The top level query type, can be anything you want!
