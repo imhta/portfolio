@@ -7,6 +7,7 @@ import configUtils from "../utils/configUtils"
 import { useSiteGCMS } from "../hooks/use-site-gcms"
 const BlogsPage = () => {
   const configs = useSiteGCMS('configs')
+  const publications = useSiteGCMS('publications');
   return (
     <Layout>
       <SEO title="Blogs" />
@@ -27,6 +28,16 @@ const BlogsPage = () => {
             <Link to="/blogs" className="active">Publications</Link>
             <Link to="/about">About</Link>
           </nav>
+          {publications.map(publication => (
+            <article className="card">
+              <div className="card-header">
+                <p>published in {publication.publishedIn}</p>
+                <h2>{publication.title}</h2>
+                <p>{publication.subtitle}</p>
+                <a href={publication.link} target="_">read more</a>
+              </div>
+            </article>
+          ))}
         </main>
       </div>
     </Layout>
