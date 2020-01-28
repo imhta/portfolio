@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import configUtils from "../utils/configUtils"
-import { useSiteConfigs } from "../hooks/use-site-configs"
+import { useSiteConfigs } from "../hooks/use-site-gcms"
 const BlogsPage = () => {
   const configs = useSiteConfigs()
   return (
@@ -23,9 +23,9 @@ const BlogsPage = () => {
         </header>
         <main>
           <nav>
-            <Link to="/">Back to Home</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/blogs">Publications</Link>
+            <Link to="/">Projects</Link>
+            <Link to="/blogs" className="active">Publications</Link>
+            <Link to="/about">About</Link>
           </nav>
         </main>
       </div>

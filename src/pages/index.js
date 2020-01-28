@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import configUtils from "../utils/configUtils"
-import { useSiteConfigs } from "../hooks/use-site-configs"
+import { useSiteConfigs } from "../hooks/use-site-gcms"
 const IndexPage = () => {
   const configs = useSiteConfigs()
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Projects" />
       <div className="app">
         <header>
           <p>{configUtils(configs).getValueByType("MAIN_TITLE")}</p>
@@ -22,9 +22,9 @@ const IndexPage = () => {
         </header>
         <main>
           <nav>
-            <Link to="/">Home</Link>
-            <Link to="/projects">Projects</Link>
+            <Link to="/" className="active">Projects</Link>
             <Link to="/blogs">Publications</Link>
+            <Link to="/about">About</Link>
           </nav>
         </main>
       </div>
