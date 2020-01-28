@@ -11,15 +11,13 @@ import PropTypes from "prop-types"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-
   return (
     <>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, 
-          {` `}
-          <a href="https://ponmuthuselvam.me">ponmuthuselvam.me</a>
-        </footer>
+      {children}
+      <footer>
+        © {new Date().getFullYear()},{` `}
+        <a href="https://ponmuthuselvam.xyz">ponmuthuselvam.xyz</a>
+      </footer>
     </>
   )
 }
