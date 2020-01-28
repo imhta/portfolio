@@ -3,9 +3,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import configUtils from "../utils/configUtils"
-import { useSiteConfigs } from "../hooks/use-site-gcms"
+import { useSiteGCMS } from "../hooks/use-site-gcms"
 const IndexPage = () => {
-  const configs = useSiteConfigs()
+  const configs = useSiteGCMS("configs")
+  const projects = useSiteGCMS("projects")
+  console.log(projects)
   return (
     <Layout>
       <SEO title="Projects" />
@@ -22,10 +24,32 @@ const IndexPage = () => {
         </header>
         <main>
           <nav>
-            <Link to="/" className="active">Projects</Link>
+            <Link to="/" className="active">
+              Projects
+            </Link>
             <Link to="/blogs">Publications</Link>
             <Link to="/about">About</Link>
           </nav>
+          {projects.map(project => (
+            <article className="card">
+              <div className="card-header">
+              <h3>
+                {project.title}
+              </h3>
+              <p>{project.subtitle}</p>
+              <p> status <small>{project.projectStatus === "ONLINE" ? "🟢" : "🗃️"}</small></p>
+              </div>
+              <img src={project.coverPicture.url} alt={project.title} />
+              {  project.description.html ?  <p
+                className="card-body"
+                dangerouslySetInnerHTML={{ __html: project.description.html }}
+              ></p> : ''}
+              <div className="action-bar">
+                <a href={project.sourceLink} target="_">Source</a>
+                <a href={project.previewLink} target="_" hidden={project.previewLink ? false : true}>Preview</a>
+              </div>
+            </article>
+          ))}
         </main>
       </div>
     </Layout>
