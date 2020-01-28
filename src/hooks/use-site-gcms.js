@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useSiteGCMS = (type) => {
+export const useSiteGCMS = type => {
   const { gcms } = useStaticQuery(graphql`
     query {
       gcms {
@@ -20,8 +20,14 @@ export const useSiteGCMS = (type) => {
           }
           coverPicture {
             id
-            url(transformation: {image: {resize: {width: 700, fit: max}}})
+            url(transformation: { image: { resize: { width: 700, fit: max } } })
           }
+        }
+        publications {
+          publishedIn
+          title
+          subtitle
+          link
         }
       }
     }
