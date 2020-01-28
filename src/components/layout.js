@@ -15,6 +15,10 @@ const Layout = ({ children }) => {
     <>
       {children}
       <footer>
+        <div className="theme-toggle">
+          <button className="light active">Light</button>
+          <button className="dark">Dark</button>
+        </div>        
         © {new Date().getFullYear()},{` `}
         <a href="https://ponmuthuselvam.xyz">ponmuthuselvam.xyz</a>
       </footer>
