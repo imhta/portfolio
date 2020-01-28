@@ -6,14 +6,19 @@ import configUtils from "../utils/configUtils"
 import { useSiteConfigs } from "../hooks/use-site-configs"
 const IndexPage = () => {
   const configs = useSiteConfigs()
-  return(
+  return (
     <Layout>
       <SEO title="Home" />
       <div className="app">
         <header>
           <p>{configUtils(configs).getValueByType("MAIN_TITLE")}</p>
           <h1>{configUtils(configs).getValueByType("MAIN_SUBTITLE")}</h1>
-          <p>{configUtils(configs).getValueByType("MAIN_MINI_DESCRIPTION")} <span role="img" aria-label="heart emoji">💖</span></p>
+          <p>
+            {configUtils(configs).getValueByType("MAIN_MINI_DESCRIPTION")}{" "}
+            <span role="img" aria-label="heart emoji">
+              💖
+            </span>
+          </p>
         </header>
         <main>
           <nav>
@@ -23,9 +28,8 @@ const IndexPage = () => {
           </nav>
         </main>
       </div>
-
     </Layout>
-  );
+  )
 }
 
 export default IndexPage
