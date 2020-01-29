@@ -32,14 +32,13 @@ const IndexPage = () => {
           </nav>
           {projects.map(project => (
             <article className="card">
+              <img src={project.coverPicture.url} alt={project.title} />
               <div className="card-header">
               <h3>
                 {project.title}
               </h3>
               <p>{project.subtitle}</p>
-              <p> status <small>{project.projectStatus === "ONLINE" ? "🟢" : "🗃️"}</small></p>
               </div>
-              <img src={project.coverPicture.url} alt={project.title} />
               {  project.description.html ?  <p
                 className="card-body"
                 dangerouslySetInnerHTML={{ __html: project.description.html }}
