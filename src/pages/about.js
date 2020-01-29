@@ -6,7 +6,10 @@ import SEO from "../components/seo"
 import configUtils from "../utils/configUtils"
 import { useSiteGCMS } from "../hooks/use-site-gcms"
 const AboutPage = () => {
-  const configs = useSiteGCMS('configs')
+  const configs = useSiteGCMS("configs")
+  const technologies = useSiteGCMS("technologies")
+  const skills = useSiteGCMS("skills")
+  const socialLinks = useSiteGCMS("socialLinks")
   return (
     <Layout>
       <SEO title="About" />
@@ -25,8 +28,31 @@ const AboutPage = () => {
           <nav>
             <Link to="/">Projects</Link>
             <Link to="/blogs">Publications</Link>
-            <Link to="/about" className="active">About</Link>
+            <Link to="/about" className="active">
+              About
+            </Link>
           </nav>
+          <section className="skill-section">
+            <strong>
+              <p>Skills</p>
+            </strong>
+            <p>{skills.map(skill => skill.title).join(" | ")}</p>
+          </section>
+          <section className="tech-section">
+            <strong>
+              <p>Technologies</p>
+            </strong>
+            <p>{technologies.map(tech => tech.title).join(" | ")}</p>
+          </section>
+          <section className="social-section">
+            <strong>
+              <p>To know more</p>
+            </strong>
+            {socialLinks.map(socialLink => 
+              <a href={socialLink.title === 'email' ? 'mailto:' + socialLink.link : socialLink.link}>
+                {socialLink.title} <br/>
+              </a>)}
+          </section>
         </main>
       </div>
     </Layout>
