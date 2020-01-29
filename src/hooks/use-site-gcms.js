@@ -29,6 +29,23 @@ export const useSiteGCMS = type => {
           subtitle
           link
         }
+        skills {
+          title
+        }
+        technologies {
+          title
+        }
+        socialLinks {
+          title
+          link
+          logo {
+            url(
+              transformation: {
+                image: { resize: { height: 24, width: 24, fit: scale } }
+              }
+            )
+          }
+        }
       }
     }
   `)
