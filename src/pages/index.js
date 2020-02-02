@@ -7,7 +7,7 @@ import { useSiteGCMS } from "../hooks/use-site-gcms"
 const IndexPage = () => {
   const configs = useSiteGCMS("configs")
   const projects = useSiteGCMS("projects")
-  console.log(projects)
+
   return (
     <Layout>
       <SEO title="Projects" />
