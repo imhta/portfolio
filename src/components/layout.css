@@ -19,9 +19,8 @@ h1 {
   font-weight: 900;
 }
 main {
+  padding: 15px;
   min-height: 100vh;
-
-
 }
 main nav {
   display: grid;
@@ -94,4 +93,18 @@ footer button.active {
 
 footer a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  header {
+    padding: 25px 20px;
+    position: static;
+  }
+  footer{
+    position: static;
+  }
 }
