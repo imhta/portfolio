@@ -20,7 +20,12 @@ export const useSiteGCMS = type => {
           }
           coverPicture {
             id
-            url(transformation: { image: { resize: { width: 700, fit: max } } })
+            url(
+              transformation: {
+                document: { output: { format: webp } }
+                image: { resize: { width: 700, fit: max } }
+              }
+            )
           }
         }
         publications {
@@ -41,6 +46,7 @@ export const useSiteGCMS = type => {
           logo {
             url(
               transformation: {
+                document: { output: { format: webp } }
                 image: { resize: { height: 24, width: 24, fit: scale } }
               }
             )
