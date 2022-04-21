@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
           </button>
         </div>
         © {new Date().getFullYear()},{` `}
-        <a href="https://ponmuthuselvam.xyz">ponmuthuselvam.xyz</a>
+        <a href="https://npms.dev">npms.dev</a>
       </footer>
     </>
   )
